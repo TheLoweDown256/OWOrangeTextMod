@@ -24,15 +24,57 @@ namespace OrangeText
 
             new Harmony("TheLoweDown256.OrangeText").PatchAll(Assembly.GetExecutingAssembly());
 
-            // Example of accessing game code.
-            OnCompleteSceneLoad(OWScene.TitleScreen, OWScene.TitleScreen); // We start on title screen
-            LoadManager.OnCompleteSceneLoad += OnCompleteSceneLoad;
         }
 
-        public void OnCompleteSceneLoad(OWScene previousScene, OWScene newScene)
+
+
+
+        public string ProcessText(string text)
         {
-            if (newScene != OWScene.SolarSystem) return;
-            ModHelper.Console.WriteLine("Loaded into solar system!", MessageType.Success);
+
+
+            string[] wordList = [
+                "CLOCKWORK",
+                "LAYERS",
+                "Bigger on the Inside",
+                "Hidden in Plain Sight",
+                "community",
+                "Escape",
+                "Isolation",
+                "miniature",
+                "Past",
+                "Future"
+            ];
+
+            string prefix = "<color=orange>";
+            string postfix = "</color>";
+
+
+            for (int i = 0; i < wordList.Length; i++)
+            {
+                string word = wordList[i].ToLower();
+
+                int nextStartIndex = 0;
+                while (true)
+                {
+                    //ModHelper.Console.WriteLine(text);
+                    //ModHelper.Console.WriteLine(nextStartIndex);
+                    //ModHelper.Console.WriteLine(text.Length);
+                    int index = text.IndexOf(word, nextStartIndex, System.StringComparison.InvariantCultureIgnoreCase);
+
+                    if (index == -1) break;
+
+                    string start=text.Substring(0, index);
+                    string end=text.Substring(index + word.Length, text.Length-(index + word.Length));
+
+                    text = start + prefix + word + postfix + end;
+
+                    nextStartIndex = index + prefix.Length + word.Length + postfix.Length;
+                }
+            }
+
+
+            return text;
         }
     }
 

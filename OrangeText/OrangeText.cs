@@ -62,18 +62,17 @@ namespace OrangeText
                 int nextStartIndex = 0;
                 while (true)
                 {
-                    //ModHelper.Console.WriteLine(text);
-                    //ModHelper.Console.WriteLine(nextStartIndex);
-                    //ModHelper.Console.WriteLine(text.Length);
 
                     int index = text.IndexOf(word, nextStartIndex, System.StringComparison.InvariantCultureIgnoreCase);
 
                     if (index == -1) break;
 
-                    string start=text.Substring(0, index);
-                    string end=text.Substring(index + word.Length, text.Length-(index + word.Length));
+                    string start = text.Substring(0, index);
+                    string end = text.Substring(index + word.Length, text.Length-(index + word.Length));
 
-                    text = start + prefix + word + postfix + end;
+                    string mid = text.Substring(index, word.Length); // to preserve capitalization
+
+                    text = start + prefix + mid + postfix + end;
 
                     nextStartIndex = index + prefix.Length + word.Length + postfix.Length;
                 }

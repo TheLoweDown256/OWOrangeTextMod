@@ -35,7 +35,7 @@ namespace OrangeText
 
             string[] wordList = [
                 "CLOCKWORK",
-                "LAYERS","layered","layer",
+                "LAYERS","layered","layer","layering",
 
                 "Bigger on the Inside",
                 "Hidden in Plain Sight",

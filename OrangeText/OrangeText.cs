@@ -35,13 +35,18 @@ namespace OrangeText
 
             string[] wordList = [
                 "CLOCKWORK",
-                "LAYERS",
+                "LAYERS","layered","layer",
+
                 "Bigger on the Inside",
                 "Hidden in Plain Sight",
-                "community",
-                "Escape",
-                "Isolation",
-                "miniature",
+
+                "community","communities",
+
+                "Escape","escaping",
+                "Isolation","isolated","isolating",
+
+                "miniature","miniaturize","miniaturizing",
+
                 "Past",
                 "Future"
             ];
@@ -60,6 +65,7 @@ namespace OrangeText
                     //ModHelper.Console.WriteLine(text);
                     //ModHelper.Console.WriteLine(nextStartIndex);
                     //ModHelper.Console.WriteLine(text.Length);
+
                     int index = text.IndexOf(word, nextStartIndex, System.StringComparison.InvariantCultureIgnoreCase);
 
                     if (index == -1) break;

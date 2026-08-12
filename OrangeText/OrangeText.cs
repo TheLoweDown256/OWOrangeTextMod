@@ -43,7 +43,7 @@ namespace OrangeText
                 "community","communities",
 
                 "Escape","escaping",
-                "Isolation","isolated","isolating",
+                "Isolation","isolate","isolating",
 
                 "miniature","miniaturize","miniaturizing",
 

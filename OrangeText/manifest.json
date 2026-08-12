@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json",
   "filename": "OrangeText.dll",
   "author": "TheLoweDown256",
-  "name": "Mod That Automatically Colours All Jam Themes Orange",
+  "name": "Mod That Automatically Colours Jam Themes Orange",
   "uniqueName": "TheLoweDown256.OrangeText",
   "version": "1.0.0",
   "owmlVersion": "2.15.1",
